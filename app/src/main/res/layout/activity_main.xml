@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="isShowName"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/guideLine1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_default_space"
+            android:fontFamily="sans-serif-medium"
+            android:format12Hour="@string/format_12h"
+            android:textAlignment="center"
+            android:textColor="?attr/colorSurface"
+            android:textSize="@dimen/text_size_clock"
+            app:layout_constraintBottom_toBottomOf="@id/guideLine1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45"
+            tools:text="01:00 PM" />
+
+        <com.saka.android.timeannounce.RoundImageView
+            android:id="@+id/imageSound"
+            android:layout_width="@dimen/space_4x"
+            android:layout_height="@dimen/space_4x"
+            android:layout_marginBottom="@dimen/space_2x"
+            android:background="@drawable/bg_circle"
+            android:padding="8dp"
+            android:src="@drawable/ic_baseline_campaign_24"
+            app:layout_constraintBottom_toBottomOf="@id/guideLine1"
+            app:layout_constraintEnd_toEndOf="@id/textClock" />
+
+        <TextView
+            android:id="@+id/textSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginTop="@dimen/space_1x"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_turn_on_time_speaking"
+            app:layout_constraintEnd_toStartOf="@id/switchTime"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideLine1" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/activity_default_space"
+            app:layout_constraintBottom_toBottomOf="@id/textSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textSwitch"
+            app:layout_constraintTop_toTopOf="@id/textSwitch"
+            app:track="@drawable/bg_switch_track" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginTop="@dimen/space_1x"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_talk_name"
+            app:layout_constraintEnd_toStartOf="@id/switchName"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textSwitch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@{isShowName}"
+            android:paddingHorizontal="@dimen/activity_default_space"
+            app:layout_constraintBottom_toBottomOf="@id/textName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/textName"
+            app:layout_constraintTop_toTopOf="@id/textName"
+            app:track="@drawable/bg_switch_track" />
+
+        <TextView
+            android:id="@+id/textUserName"
+            shouldShow="@{isShowName}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_default_space"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/textName"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/textSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginTop="@dimen/space_1x"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_schedule"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textUserName" />
+
+        <TextView
+            android:id="@+id/textScheduleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginEnd="@dimen/activity_default_space"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_schedule"
+            app:layout_constraintBottom_toBottomOf="@id/textSchedule"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textSchedule" />
+
+        <TextView
+            android:id="@+id/textLocale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginTop="@dimen/space_1x"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_locale"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textSchedule" />
+
+        <TextView
+            android:id="@+id/textLocaleValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_default_space"
+            android:layout_marginEnd="@dimen/activity_default_space"
+            android:paddingVertical="@dimen/space_1x"
+            android:text="@string/title_schedule"
+            app:layout_constraintBottom_toBottomOf="@id/textLocale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textLocale" />
+
+        <TextView
+            android:id="@+id/textAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_default_space"
+            android:layout_marginBottom="@dimen/space_1x"
+            android:text="@string/app_version"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

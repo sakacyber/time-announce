@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Time Announce</string>
+    <string name="app_version" translatable="false">Time Announce 0.1</string>
+    <string name="title_turn_on_time_speaking">Turn on time speaking</string>
+    <string name="title_talk_name">Turn on greeting</string>
+    <string name="button_talk_time">Talk Time</string>
+    <string name="hint_your_name">Name</string>
+    <string name="title_your_name">Tell your name</string>
+
+    <string name="title_username_greeting">Hello %s</string>
+    <string name="title_time_greeting">The time is $1%s and $2%s minutes</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_locale">Language</string>
+    <string name="format_12h" translatable="false">hh:mm:ss a</string>
+
+</resources>

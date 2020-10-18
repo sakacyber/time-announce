@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Time Announce</string>
+    <string name="title_turn_on_time_speaking">និយាយម៉ោង</string>
+    <string name="title_talk_name">ស្វាគមន៏</string>
+    <string name="button_talk_time">និយាយម៉ោង</string>
+    <string name="hint_your_name">ឈ្មោះ</string>
+    <string name="title_your_name">ឈ្មោះរបស់អ្នក</string>
+
+    <string name="title_username_greeting">សួស្តី $1%s</string>
+    <string name="title_time_greeting">នៅពេលនេះម៉ោង $1%s និង $2%s នាទី</string>
+    <string name="title_schedule">កាលវិភាគ</string>
+    <string name="title_locale">ភាសា</string>
+
+</resources>

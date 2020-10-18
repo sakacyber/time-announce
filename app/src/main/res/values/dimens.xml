@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_default_space">16dp</dimen>
+    <dimen name="space_1x">12dp</dimen>
+    <dimen name="space_2x">24dp</dimen>
+    <dimen name="space_3x">36dp</dimen>
+    <dimen name="space_4x">48dp</dimen>
+
+    <item name="text_size_app" type="dimen">16sp</item>
+    <item name="text_size_clock" type="dimen">48sp</item>
+
+</resources>
